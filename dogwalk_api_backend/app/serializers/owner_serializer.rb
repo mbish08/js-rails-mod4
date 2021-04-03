@@ -1,4 +1,4 @@
 class OwnerSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :dogs
 end
