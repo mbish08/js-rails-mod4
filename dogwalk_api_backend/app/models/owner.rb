@@ -1,4 +1,4 @@
 class Owner < ApplicationRecord
-    #! has_many :Dogs
+    has_many :dogs
 
 end
