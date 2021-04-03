@@ -9,7 +9,7 @@ class CreateDogs < ActiveRecord::Migration[6.1]
       t.text :meds
       t.text :vet_info
       t.integer :age
-      t.owner :references
+      t.references :owner, null: false, foreign_key: true
 
       t.timestamps
     end
