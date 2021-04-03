@@ -5,4 +5,19 @@ class Api::V1::OwnersController < ApplicationController
         render json: owners
     end
 
+    def create
+        owner = Owner.new(owner_params)
+        if owner.save
+            render json: owner, status: :accepted
+        else
+            render json: { errors: owner.errors.full_messages }, status: :unprocessible_entity
+        end
+    end
+
+    private
+
+    def owner_params
+        params.require(:owner).permit(:name)
+    end
+
 end
