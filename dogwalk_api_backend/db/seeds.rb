@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#* Owner seeds
+harry = Owner.create(name: "Harry")
+ron = Owner.create(name: "Ron")
+hermione = Owner.create(name: "Hermione")
