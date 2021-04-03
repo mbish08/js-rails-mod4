@@ -10,7 +10,7 @@ class Api::V1::DogsController < ApplicationController
         if dog.save
             render json: dog, status: :accepted
         else
-            render json: { errors: dog.errors.full_messages }, status: :unprocessible_entity
+            render json: { errors: dog.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
