@@ -1,5 +1,5 @@
 class OwnerSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :dogs
+  attributes :name
   has_many :dogs
 end
