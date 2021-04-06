@@ -1,7 +1,7 @@
-const ownersUrl = "http://localhost:3000/api/v1/owners"
+const ownersAdapter = new OwnersAdapter
 const dogsUrl = "http://localhost:3000/api/v1/dogs"
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchOwners()
+    ownersAdapter.fetchOwners()
 })
 
