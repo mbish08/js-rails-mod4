@@ -8,15 +8,13 @@ class Owner {
         this.element.id = `owner-${id}`
         this.ownerList = document.getElementById('owner-list')
         this.element.className = "owner"
-        
+     
         Owner.all.push(this)
     }
     
     attachToDom() {
         // console.log(this)
         this.ownerList.append(this.ownerRender())
-
-
     }
 
     ownerRender() {
@@ -27,6 +25,11 @@ class Owner {
         <div>${this.name} </div>`
 
         return this.element
+    }
+
+    addOwnersDogs() {
+        // data.data[0].relationships.dogs.data.length
+        console.log(this)
     }
 
 }

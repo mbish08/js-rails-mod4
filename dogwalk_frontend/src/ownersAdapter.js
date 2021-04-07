@@ -6,9 +6,6 @@ class OwnersAdapter {
     fetchOwners() {
         fetch(this.ownersUrl)
         .then(res => res.json())
-        // .then(owners => {
-        //     this.initializeOwner(owners.data)
-        // })
         .then(owners => {
             owners.data.forEach(owner => {
                 this.initializeOwner(owner)
@@ -23,4 +20,6 @@ class OwnersAdapter {
         // let ownerArray = data
         ownerData.attachToDom()
     }
+
+
 }
