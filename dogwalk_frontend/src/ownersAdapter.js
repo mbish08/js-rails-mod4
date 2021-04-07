@@ -15,5 +15,6 @@ class OwnersAdapter {
 
     initializeOwner(data) {
         let ownerData = new Owner({id: data.id, ...data.attributes}) 
+        ownerData.attachToDom()
     }
 }

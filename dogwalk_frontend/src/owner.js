@@ -11,6 +11,18 @@ class Owner {
         Owner.all.push(this)
     }
     
+    attachToDom() {
+        console.log(this)
+        this.ownerList.append(this.ownerRender())
+    }
+
+    ownerRender() {
+        this.element.innerHTML = `
+        <div>${this.name}</div>`
+        return this.element
+    }
+
+
     // addOwners(resp) {
     //     console.log(resp)
     //     let ownerElement = document.getElementById("owner-list")
