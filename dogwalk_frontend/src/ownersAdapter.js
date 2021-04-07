@@ -19,7 +19,7 @@ class OwnersAdapter {
     initializeOwner(data) {
         // NEW stuff - owners.data.length
         // console.log(data)
-        let ownerData = new Owner({id: data.id, ...data.attributes}) 
+        let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
         // let ownerArray = data
         ownerData.attachToDom()
     }

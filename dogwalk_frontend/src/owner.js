@@ -7,6 +7,7 @@ class Owner {
         this.element = document.createElement('div')
         this.element.id = `owner-${id}`
         this.ownerList = document.getElementById('owner-list')
+        this.element.className = "owner"
         
         Owner.all.push(this)
     }
@@ -20,9 +21,10 @@ class Owner {
 
     ownerRender() {
         // console.log(this)
-        // for (let i = 0; i < this.length; i++)
+        // let dogCount = this.id
+
         this.element.innerHTML += `
-        <div>${this.name}</div>`
+        <div>${this.name} </div>`
 
         return this.element
     }
