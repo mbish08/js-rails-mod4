@@ -13,12 +13,18 @@ class Owner {
     
     attachToDom() {
         console.log(this)
-        this.ownerList.append(this.ownerRender())
+        // this.ownerList.append(this.ownerRender())
     }
 
     ownerRender() {
-        this.element.innerHTML = `
-        <div>${this.name}</div>`
+
+        // console.log(this)
+        // for (let i = 0; i < this.)
+
+
+
+        // this.element.innerHTML = `
+        // <div>${this.name}</div>`
         return this.element
     }
 
