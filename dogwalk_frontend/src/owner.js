@@ -29,18 +29,4 @@ class Owner {
         return this.element
     }
 
-
-    // addOwners(resp) {
-    //     console.log(resp)
-    //     let ownerElement = document.getElementById("owner-list")
-    //     // resp.data[0].attributes.name
-    //     resp.data.forEach(owner => {
-    //         const ownerMarkup = `
-    //             <div owner-id=${owner.id}>
-    //                 <h3>${owner.attributes.name}</h3>
-    //             </div>`
-    
-    //         ownerElement += ownerMarkup
-    //     })
-    // }
 }
