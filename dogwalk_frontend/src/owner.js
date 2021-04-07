@@ -19,8 +19,9 @@ class Owner {
     }
 
     ownerRender() {
-
-        this.element.innerHTML = `
+        // console.log(this)
+        // for (let i = 0; i < this.length; i++)
+        this.element.innerHTML += `
         <div>${this.name}</div>`
 
         return this.element
