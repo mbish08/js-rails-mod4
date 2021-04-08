@@ -15,19 +15,25 @@ class Owner {
     attachToDom() {
         // console.log(this)
         this.ownerList.append(this.ownerRender())
+        this.addOwnersDogs()
     }
 
     ownerRender() {
-        this.element.innerHTML += `
+        this.element.innerHTML = `
         <div>${this.name} </div>`
 
         return this.element
     }
 
+    get dogs() {
+        // debugger
+    }
+
     addOwnersDogs() {
         // data.data[0].relationships.dogs.data.length
-        console.log(this)
-        // const dogsList 
+        // console.log(this)
+        const dogsList = document.getElementById("dog-list")
+        this.dogs
     }
 
 }

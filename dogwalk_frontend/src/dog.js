@@ -12,7 +12,16 @@ class Dog {
         this.vet_info = vet_info
         this.age = age
         this.owner_id = owner_id
+        this.dogList = document.getElementById("dog-list")
 
         Dog.all.push(this)
+    }
+
+    attachToDom() {
+        this.dogList.append(this.dogRender())
+    }
+
+    dogRender() {
+        
     }
 }
