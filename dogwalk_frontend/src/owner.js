@@ -18,9 +18,6 @@ class Owner {
     }
 
     ownerRender() {
-        // console.log(this)
-        // let dogCount = this.id
-
         this.element.innerHTML += `
         <div>${this.name} </div>`
 
@@ -30,6 +27,7 @@ class Owner {
     addOwnersDogs() {
         // data.data[0].relationships.dogs.data.length
         console.log(this)
+        // const dogsList 
     }
 
 }

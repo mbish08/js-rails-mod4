@@ -4,4 +4,10 @@
     border: 1px black;
     margin: 15px;
     padding: 15px;
+    width: 100%;
+}
+
+.dogs {
+    display: inline-block;
+    margin: 0 auto;
 }
