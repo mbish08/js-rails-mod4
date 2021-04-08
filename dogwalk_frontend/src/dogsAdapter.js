@@ -8,9 +8,11 @@ class DogsAdapter {
         fetch(this.dogsUrl)
         .then(res => res.json())
         .then(dogs => {
-            let dog = new Dog(dogs.data)
-            // console.log(dogs)
-            dog.attachToDom(dogs)
+            dogs.data.forEach(el => {
+                let dog = new Dog(el.attributes)
+                dog.attachToDom(el)
+            })
+            
         })
     }
 

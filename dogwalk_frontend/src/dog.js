@@ -13,6 +13,8 @@ class Dog {
         this.age = age
         this.owner_id = owner_id
         this.dogList = document.getElementById("dog-list")
+        this.element = document.createElement('div')
+        this.element.className = "dogs"
 
         Dog.all.push(this)
     }
@@ -22,6 +24,18 @@ class Dog {
     }
 
     dogRender() {
-        
+        this.element.innerHTML = `
+        <h4>${this.name}</h4>
+        <ul>
+            <li>Breed: ${this.breed}</li>
+            <li>Weight: ${this.weight}</li>
+            <li>Allergies: ${this.allergies}</li>
+            <li>Behaviors: ${this.behaviors}</li>
+            <li>Meds: ${this.meds}</li>
+            <li>Vet Info: ${this.vet_info}</li>
+            <li>Age: ${this.age}</li>
+        </ul>
+        `
+        return this.element
     }
 }
