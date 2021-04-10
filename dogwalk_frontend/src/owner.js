@@ -15,7 +15,7 @@ class Owner {
     attachToDom() {
         // console.log(this)
         this.ownerList.append(this.ownerRender())
-        this.addOwnersDogs()
+        this.ownerList.append(this.addOwnersDogs())
     }
 
     ownerRender() {
@@ -26,14 +26,33 @@ class Owner {
     }
 
     get dogs() {
-        // debugger
+        return Dog.all.filter(d => d.owner_id == this.id)
     }
 
-    addOwnersDogs() {
-        // data.data[0].relationships.dogs.data.length
-        // console.log(this)
+    addOwnersDogs = () => {
         const dogsList = document.getElementById("dog-list")
-        this.dogs
-    }
+        dogsList.element = document.createElement('div')
+        
+        this.dogs.forEach(d => {
+            console.log(d.name)
+            // debugger
+            
+            dogsList.innerHTML = `
+            ${this.name}'s dog(s):
+                <h4>${d.name}</h4>
+                <ul>
+                    <li>Breed: ${d.breed}</li>
+                    <li>Weight: ${d.weight}</li>
+                    <li>Allergies: ${d.allergies}</li>
+                    <li>Behaviors: ${d.behaviors}</li>
+                    <li>Meds: ${d.meds}</li>
+                    <li>Vet Info: ${d.vet_info}</li>
+                    <li>Age: ${d.age}</li>
+                </ul>
 
+            `
+            dogsList.element.className = "dogs"
+            this.ownerList.appendChild(dogsList)
+        })
+    }
 }

@@ -8,6 +8,6 @@
 }
 
 .dogs {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
+    margin: 30px;
 }
