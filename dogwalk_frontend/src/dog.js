@@ -20,7 +20,7 @@ class Dog {
     }
 
     attachToDom() {
-        this.dogList.append(this.dogRender())
+        // this.dogList.append(this.dogRender())
     }
 
     dogRender() {
