@@ -20,7 +20,7 @@ class Owner {
 
     ownerRender() {
         this.element.innerHTML = `
-        <div>${this.name} </div>`
+        <div><h3>${this.name}</h3></div>`
 
         return this.element
     }
@@ -32,13 +32,13 @@ class Owner {
     addOwnersDogs = () => {
         const dogsList = document.getElementById("dog-list")
         dogsList.element = document.createElement('div')
-        
+        dogsList.element.className = "dogs"
         this.dogs.forEach(d => {
             console.log(d.name)
             // debugger
             
             dogsList.innerHTML = `
-            ${this.name}'s dog(s):
+            <div>${this.name}'s dog(s):
                 <h4>${d.name}</h4>
                 <ul>
                     <li>Breed: ${d.breed}</li>
@@ -49,9 +49,9 @@ class Owner {
                     <li>Vet Info: ${d.vet_info}</li>
                     <li>Age: ${d.age}</li>
                 </ul>
-
+                </div>
             `
-            dogsList.element.className = "dogs"
+            
             this.ownerList.appendChild(dogsList)
         })
     }
