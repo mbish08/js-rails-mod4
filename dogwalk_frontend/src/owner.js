@@ -19,7 +19,7 @@ class Owner {
     }
 
     ownerRender() {
-        this.element.innerHTML = `
+        this.element.innerHTML += `
         <div><h3>${this.name}</h3></div>`
 
         return this.element
@@ -37,7 +37,7 @@ class Owner {
             console.log(d.name)
             // debugger
             
-            dogsList.innerHTML = `
+            dogsList.innerHTML += `
             <div>${this.name}'s dog(s):
                 <h4>${d.name}</h4>
                 <ul>
