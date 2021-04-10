@@ -10,6 +10,7 @@ class DogsAdapter {
         .then(dogs => {
             dogs.data.forEach(el => {
                 let dog = new Dog(el.attributes)
+                dog.id = el.id
                 dog.attachToDom(el)
             })
             
