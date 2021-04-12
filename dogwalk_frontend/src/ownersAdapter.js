@@ -19,6 +19,7 @@ class OwnersAdapter {
         let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
         // let ownerArray = data
         ownerData.attachToDom()
+        ownerData.addOwnersDogs()
     }
 
 

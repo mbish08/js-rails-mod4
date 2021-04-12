@@ -15,7 +15,7 @@ class Owner {
     attachToDom() {
         // console.log(this)
         this.ownerList.append(this.ownerRender())
-        this.ownerList.append(this.addOwnersDogs())
+        // this.ownerList.append(this.addOwnersDogs())
     }
 
     ownerRender() {
@@ -26,30 +26,30 @@ class Owner {
     }
 
     get dogs() {
-        return Dog.all.filter(d => d.owner_id == this.id)
+        return Dog.all.filter(d => d.owner_id === parseInt(this.id))
     }
 
     addOwnersDogs = () => {
-        const dogsList = document.getElementById("dog-list")
+        const dogsList = document.getElementById(`owner-${this.id}`)
         dogsList.element = document.createElement('div')
         dogsList.element.className = "dogs"
-        this.dogs.forEach(d => {
-            console.log(d.name)
+        this.dogs.forEach(dog => {
+            // console.log(dog.name)
             // debugger
             
             dogsList.innerHTML += `
-            <div>${this.name}'s dog(s):
-                <h4>${d.name}</h4>
+            <div>
+                <h4>${dog.name}</h4>
                 <ul>
-                    <li>Breed: ${d.breed}</li>
-                    <li>Weight: ${d.weight}</li>
-                    <li>Allergies: ${d.allergies}</li>
-                    <li>Behaviors: ${d.behaviors}</li>
-                    <li>Meds: ${d.meds}</li>
-                    <li>Vet Info: ${d.vet_info}</li>
-                    <li>Age: ${d.age}</li>
+                    <li>Breed: ${dog.breed}</li>
+                    <li>Weight: ${dog.weight}</li>
+                    <li>Allergies: ${dog.allergies}</li>
+                    <li>Behaviors: ${dog.behaviors}</li>
+                    <li>Meds: ${dog.meds}</li>
+                    <li>Vet Info: ${dog.vet_info}</li>
+                    <li>Age: ${dog.age}</li>
                 </ul>
-                </div>
+            </div>
             `
             
             this.ownerList.appendChild(dogsList)
