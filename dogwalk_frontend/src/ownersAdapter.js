@@ -22,5 +22,30 @@ class OwnersAdapter {
         ownerData.addOwnersDogs()
     }
 
+    handleFormSubmit = (e) => {
+        e.preventDefault
+        const name = document.getElementById('owner-name').value
+
+        let newOwnerObj = {
+            name
+        }
+
+        let configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(newOwnerObj)
+        }
+
+        fetch(this.ownersUrl, configObj)
+        .then(res => res.json())
+        // .then(owner => {
+            // console.log(owner)
+        //     let newOwner = new Owner(owner)
+        //     newOwner.attachToDom()
+        // })
+    }
 
 }
