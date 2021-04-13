@@ -48,7 +48,7 @@ class OwnersAdapter {
         // })
     }
 
-    deleteOwners(id) {
+    deleteOwner(id) {
         let configObj = {
             method: 'DELETE',
             headers: {

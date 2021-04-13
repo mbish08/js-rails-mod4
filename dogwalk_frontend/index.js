@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dogsAdapter.fetchDogs()
     newOwnerButton.addEventListener('click', newOwnerForm)
     ownerForm.addEventListener('submit', ownersAdapter.handleFormSubmit)
-    ownerList.addEventListener('click', owners.handleListClick)
+    // ownerList.addEventListener('click', owners.handleListClick)
 })
 
 function newOwnerForm(e) {

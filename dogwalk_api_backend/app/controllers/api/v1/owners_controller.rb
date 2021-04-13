@@ -14,6 +14,11 @@ class Api::V1::OwnersController < ApplicationController
         end
     end
 
+    def destroy
+        owner = Owner.find(params[:id])
+        owner.destroy
+    end
+
     private
 
     def owner_params
