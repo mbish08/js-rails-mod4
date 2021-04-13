@@ -20,7 +20,9 @@ class Owner {
 
     ownerRender() {
         this.element.innerHTML += `
-        <div><h3>${this.name}</h3></div>`
+        <div><h3>${this.name}</h3></div>
+        <button class="delete" data-id="${this.id}">Delete ${this.name}</button>
+        `
 
         return this.element
     }
