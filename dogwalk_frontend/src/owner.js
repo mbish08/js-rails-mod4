@@ -18,15 +18,9 @@ class Owner {
         // this.ownerList.append(this.addOwnersDogs())
     }
 
-    addEventListeners() {
-        this.element.addEventListener('click', this.handleListClick)
-    }
-
     ownerRender() {
         this.element.innerHTML += `
-        <div><h3>${this.name}</h3></div>
-        <button class="delete" data-id="${this.id}">Delete ${this.name}</button>
-        `
+        <div><h3>${this.name}</h3></div>`
 
         return this.element
     }
@@ -60,12 +54,5 @@ class Owner {
             
             this.ownerList.appendChild(dogsList)
         })
-    }
-
-    handleListClick = (e) => {
-        let id = e.target.dataset.id
-        if (e.target.className === "delete") {
-            ownersAdapter.deleteOwner(id)
-        }
     }
 }

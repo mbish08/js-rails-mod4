@@ -48,23 +48,4 @@ class OwnersAdapter {
         // })
     }
 
-    deleteOwner(id) {
-        let configObj = {
-            method: 'DELETE',
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            }
-        }
-        fetch(this.ownersUrl + `/${id}`, configObj)
-        .then(res => res.json())
-        .then(json => {
-            console.log(json)
-        })
-        Owner.all = Owner.all.filter(owner => owner.id != id)
-
-        let owner = document.getElementById(`owner-${id}`)
-        owner.remove()
-    }
-
 }
