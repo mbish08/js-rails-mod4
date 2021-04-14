@@ -13,9 +13,7 @@ class Owner {
     }
     
     attachToDom() {
-        // console.log(this)
         this.ownerList.append(this.ownerRender())
-        // this.ownerList.append(this.addOwnersDogs())
     }
 
     ownerRender() {
@@ -36,9 +34,6 @@ class Owner {
         dogsList.element = document.createElement('div')
         dogsList.element.className = "dogs"
         this.dogs.forEach(dog => {
-            // console.log(dog.name)
-            // debugger
-            
             dogsList.innerHTML += `
             <div>
                 <h4>${dog.name}</h4>
@@ -57,4 +52,5 @@ class Owner {
             this.ownerList.appendChild(dogsList)
         })
     }
+    
 }

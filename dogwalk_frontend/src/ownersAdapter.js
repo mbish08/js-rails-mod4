@@ -14,10 +14,7 @@ class OwnersAdapter {
     }
 
     initializeOwner(data) {
-        // NEW stuff - owners.data.length
-        // console.log(data)
         let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
-        // let ownerArray = data
         ownerData.attachToDom()
         ownerData.addOwnersDogs()
     }
@@ -40,7 +37,7 @@ class OwnersAdapter {
         }
 
         fetch(this.ownersUrl, configObj)
-        .then(res => res.json())
+        // .then(res => res.json())
         // .then(owner => {
             // console.log(owner)
         //     let newOwner = new Owner(owner)
@@ -68,9 +65,16 @@ class OwnersAdapter {
         
         fetch(this.ownersUrl + `/${id}`, configObj)
         .then(res => res.json())
-        .then(owner => {
-            console.log(owner)
-        })
+        // .then(json => {
+        //     console.log(json)
+        // })
+
+        Owner.all = Owner.all.filter(owner => owner.id != id)
+
+        let owner = document.getElementById(`owner-${id}`)
+        owner.remove()
     }
+
+        
 
 }
