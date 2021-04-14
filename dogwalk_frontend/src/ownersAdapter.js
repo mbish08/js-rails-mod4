@@ -48,4 +48,29 @@ class OwnersAdapter {
         // })
     }
 
+    handleListClick = (e) => {
+        // console.log(e)
+        let id = e.target.dataset.id
+        if (e.target.className === "delete") {
+            ownersAdapter.deleteOwner(id)
+        }
+    }
+
+    deleteOwner(id) {
+        // console.log(id)
+        let configObj = {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }
+        }
+        
+        fetch(this.ownersUrl + `/${id}`, configObj)
+        .then(res => res.json())
+        .then(owner => {
+            console.log(owner)
+        })
+    }
+
 }
