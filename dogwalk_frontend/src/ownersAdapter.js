@@ -47,7 +47,7 @@ class OwnersAdapter {
         const ownerForm = document.getElementById('owner-form')
         newOwnerButton.hidden = false
         ownerForm.hidden = true
-        newOwnerButton.addEventListener('click', newOwnerForm)
+        newOwnerButton.addEventListener('click', newOwnersForm)
     }
 
     handleListClick = (e) => {
@@ -64,13 +64,15 @@ class OwnersAdapter {
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
-            }
+            },
+            body: JSON.stringify(id)
         }
         
         fetch(this.ownersUrl + `/${id}`, configObj)
-        .then(res => res.json())
-        // .then(json => {
-        //     console.log(json)
+        // debugger
+        // .then(res => res.json())
+        // .then(resp => {
+        //     console.log(resp)
         // })
 
         Owner.all = Owner.all.filter(owner => owner.id != id)
