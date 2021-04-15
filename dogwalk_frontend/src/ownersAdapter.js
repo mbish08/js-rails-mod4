@@ -42,11 +42,15 @@ class OwnersAdapter {
             let newOwner = new Owner(owner)
             newOwner.attachToDom()
         })
-
+        
+        ownerForm.reset()
         const newOwnerButton = document.getElementById('new-owner-button')
-        const ownerForm = document.getElementById('owner-form')
+        const formContainer = document.getElementById('new-owner-form-container')
+        // debugger
+        
+        formContainer.hidden = true
+       
         newOwnerButton.hidden = false
-        ownerForm.hidden = true
         newOwnerButton.addEventListener('click', newOwnersForm)
     }
 
