@@ -20,7 +20,7 @@ class OwnersAdapter {
     }
 
     handleFormSubmit = (e) => {
-        e.preventDefault
+        e.preventDefault()
         const name = document.getElementById('owner-name').value
 
         let newOwnerObj = {
@@ -37,16 +37,20 @@ class OwnersAdapter {
         }
 
         fetch(this.ownersUrl, configObj)
-        // .then(res => res.json())
-        // .then(owner => {
-            // console.log(owner)
-        //     let newOwner = new Owner(owner)
-        //     newOwner.attachToDom()
-        // })
+        .then(res => res.json())
+        .then(owner => {
+            let newOwner = new Owner(owner)
+            newOwner.attachToDom()
+        })
+
+        const newOwnerButton = document.getElementById('new-owner-button')
+        const ownerForm = document.getElementById('owner-form')
+        newOwnerButton.hidden = false
+        ownerForm.hidden = true
+        newOwnerButton.addEventListener('click', newOwnerForm)
     }
 
     handleListClick = (e) => {
-        // console.log(e)
         let id = e.target.dataset.id
         if (e.target.className === "delete") {
             ownersAdapter.deleteOwner(id)
