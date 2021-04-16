@@ -46,7 +46,6 @@ class OwnersAdapter {
         ownerForm.reset()
         const newOwnerButton = document.getElementById('new-owner-button')
         const formContainer = document.getElementById('new-owner-form-container')
-        // debugger
         
         formContainer.hidden = true
        
@@ -62,29 +61,24 @@ class OwnersAdapter {
     }
 
     deleteOwner(id) {
-        // console.log(id)
         let configObj = {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
-            },
-            body: JSON.stringify(id)
+            }
         }
         
         fetch(this.ownersUrl + `/${id}`, configObj)
-        // debugger
-        // .then(res => res.json())
-        // .then(resp => {
-        //     console.log(resp)
-        // })
+        .then(res => res.json())
+        .then(resp => {
+            console.log(resp)
+        })
 
         Owner.all = Owner.all.filter(owner => owner.id != id)
 
         let owner = document.getElementById(`owner-${id}`)
         owner.remove()
     }
-
-        
 
 }
