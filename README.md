@@ -1,1 +1,3 @@
-# js-rails-mod4
+This is my JavaScript/Rails application.  The concept is for a dog walker to be able to track their clients, clients' dogs, and basic information that is needed.  Current functionality includes being able to add and delete clients/owners with more features to be built at a later date.  
+
+To use, clone the repo from Github, run 'rails s' in your terminal for the API, and open index.html in your browser.  
