@@ -10,13 +10,14 @@ class Api::V1::OwnersController < ApplicationController
         if owner.save
             render json: owner, status: :accepted
         else
-            render json: { errors: owner.errors.full_messages }, status: :unprocessable_entity
+            render json: { errors: owner.errors.full_messages }
         end
     end
 
     def destroy
         owner = Owner.find(params[:id])
         owner.destroy
+        render json: {message: "#{owner.name} has been deleted."}
     end
 
     private

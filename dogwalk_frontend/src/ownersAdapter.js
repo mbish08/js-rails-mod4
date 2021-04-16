@@ -72,7 +72,7 @@ class OwnersAdapter {
         fetch(this.ownersUrl + `/${id}`, configObj)
         .then(res => res.json())
         .then(resp => {
-            console.log(resp)
+            alert(resp.message)
         })
 
         Owner.all = Owner.all.filter(owner => owner.id != id)
