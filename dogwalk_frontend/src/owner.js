@@ -38,13 +38,13 @@ class Owner {
             <div>
                 <h4>${dog.name}</h4>
                 <ul>
-                    <li>Breed: ${dog.breed}</li>
-                    <li>Weight: ${dog.weight}</li>
-                    <li>Allergies: ${dog.allergies}</li>
-                    <li>Behaviors: ${dog.behaviors}</li>
-                    <li>Meds: ${dog.meds}</li>
-                    <li>Vet Info: ${dog.vet_info}</li>
-                    <li>Age: ${dog.age}</li>
+                    <li>Breed: ${dog.breed ? dog.breed : 'none'}</li>
+                    <li>Weight: ${dog.weight ? dog.weight : 'none'}</li>
+                    <li>Allergies: ${dog.allergies ? dog.allergies : 'none'}</li>
+                    <li>Behaviors: ${dog.behaviors ? dog.behaviors : 'none'}</li>
+                    <li>Meds: ${dog.meds ? dog.meds : 'none'}</li>
+                    <li>Vet Info: ${dog.vet_info ? dog.vet_info : 'none'}</li>
+                    <li>Age: ${dog.age ? dog.age : 'none'}</li>
                 </ul>
             </div>
             `
