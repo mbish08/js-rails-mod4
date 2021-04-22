@@ -11,11 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     newOwnerButton.addEventListener('click', newOwnersForm)
     ownerForm.addEventListener('submit', ownersAdapter.handleFormSubmit)
     ownerList.addEventListener('click', ownersAdapter.handleListClick)
-    newDogButton.addEventListener('click', dogsAdapter.newDogsForm)
+    newDogButton.addEventListener('click', newDogsForm)
 })
 
 function newOwnersForm(e) {
     e.target.hidden = true
     const newOwnerForm = document.getElementById('new-owner-form-container')
     newOwnerForm.hidden = false
+}
+
+function newDogsForm(e) {
+    e.target.hidden = true
+    const newDogForm = document.getElementById('new-dog-form-container')
+    newDogForm.hidden = false
 }
