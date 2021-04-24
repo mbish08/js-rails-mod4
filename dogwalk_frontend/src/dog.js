@@ -19,10 +19,13 @@ class Dog {
         Dog.all.push(this)
     }
 
-    // ownersInfo() {
-    //     Owner.all.forEach(owner => (`${owner.id} - ${owner.name}`))
-    // }
-    
+    ownersInfo() {
+        Owner.all.forEach(owner => {
+            owner.id
+            owner.name
+        })
+    }
+
     // attachToDom() {
     //     // this.dogList.append(this.dogRender())
     // }
