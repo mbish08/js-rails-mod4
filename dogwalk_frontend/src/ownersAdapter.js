@@ -18,10 +18,19 @@ class OwnersAdapter {
         let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
         ownerData.attachToDom()
         ownerData.addOwnersDogs()
+        // debugger
+        // data.id
+        // data.attributes.name
     }
 
     initializeOwnerDropDown(data) {
+        const dropDown = document.getElementById('ownerSelect')
+        // debugger
+        dropDown.innerHTML += `
+        <option  value="${data.id}" name="owner_id">${data.attributes.name}</option>
+        `
         
+
     }
 
     handleFormSubmit = (e) => {
