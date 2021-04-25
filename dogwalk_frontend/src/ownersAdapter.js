@@ -9,6 +9,7 @@ class OwnersAdapter {
         .then(owners => {
             owners.data.forEach(owner => {
                 this.initializeOwner(owner)
+                this.initializeOwnerDropDown(owner)
             })
         })
     }
@@ -17,6 +18,10 @@ class OwnersAdapter {
         let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
         ownerData.attachToDom()
         ownerData.addOwnersDogs()
+    }
+
+    initializeOwnerDropDown(data) {
+        
     }
 
     handleFormSubmit = (e) => {
