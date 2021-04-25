@@ -29,6 +29,42 @@ class DogsAdapter {
         const ownerId = document.getElementById('owner_id').value
         // debugger
         console.log(e)
+
+        let newDogObj = {
+            name, 
+            breed,
+            weight,
+            allergies,
+            behaviors,
+            meds,
+            vetInfo,
+            age,
+            ownerId
+        }
+
+        let configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(newDogObj)
+        }
+
+        // I need to double check what I am passing into Dog
+        // also need to check everything from here down to make sure it works properly after fixing owner_id issue
+        fetch(this.dogsUrl, configObj)
+        .then(res => res.json())
+        .then(json => {
+            let dog = new Dog(json.data.attributes)
+        })
+
+        dogForm.reset()
+        const newDogForm = document.getElementById('new-dog-form-container')
+        const newDogButton = document.getElementById('new-dog-button')
+        newDogForm.hidden = true
+        newDogForm.hidden = false
+        newDogButton.addEventListener('click', newDogsForm)
     }
 
 }
