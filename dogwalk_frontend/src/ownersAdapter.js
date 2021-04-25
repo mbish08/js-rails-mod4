@@ -10,6 +10,7 @@ class OwnersAdapter {
             owners.data.forEach(owner => {
                 this.initializeOwner(owner)
                 this.initializeOwnerDropDown(owner)
+                // console.log(owner)
             })
         })
     }
@@ -21,12 +22,13 @@ class OwnersAdapter {
     }
 
     initializeOwnerDropDown(data) {
+        // console.log(data)
+        // debugger
         const dropDown = document.getElementById('ownerSelect')
+        let ownerId = parseInt(data.id)
         dropDown.innerHTML += `
-        <option  value="${data.id}" name="owner_id">${data.attributes.name}</option>
+        <option  value="ownerId" name="owner_id">${data.attributes.name}</option>
         `
-        
-
     }
 
     handleFormSubmit = (e) => {
