@@ -17,6 +17,7 @@ class DogsAdapter {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
+        debugger
         const name = document.getElementById('dog-name').value
         const breed = document.getElementById('dog-breed').value
         const weight = document.getElementById('dog-weight').value
@@ -26,7 +27,7 @@ class DogsAdapter {
         const vetInfo = document.getElementById('dog-vet-info').value
         const age = document.getElementById('dog-age').value
         const ownerId = document.getElementById('owner_id').value
-
+        // debugger
         console.log(e)
     }
 
