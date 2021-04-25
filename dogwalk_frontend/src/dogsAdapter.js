@@ -17,7 +17,8 @@ class DogsAdapter {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
-        debugger
+        // debugger
+        // error on owner_id:  dogsAdapter.js:30 Uncaught TypeError: Cannot read property 'value' of null
         const name = document.getElementById('dog-name').value
         const breed = document.getElementById('dog-breed').value
         const weight = document.getElementById('dog-weight').value
