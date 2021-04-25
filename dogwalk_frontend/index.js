@@ -24,5 +24,4 @@ function newDogsForm(e) {
     e.target.hidden = true
     const newDogForm = document.getElementById('new-dog-form-container')
     newDogForm.hidden = false
-    // const ownerSelect = document.getElementById('ownerSelect')
 }

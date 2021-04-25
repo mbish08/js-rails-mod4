@@ -19,30 +19,4 @@ class Dog {
         Dog.all.push(this)
     }
 
-    // ownersInfo() {
-    //     Owner.all.forEach(owner => {
-    //         owner.id
-    //         owner.name
-    //     })
-    // }
-
-    // attachToDom() {
-    //     // this.dogList.append(this.dogRender())
-    // }
-
-    // dogRender() {
-    //     this.element.innerHTML = `
-    //     <h4>${this.name}</h4>
-    //     <ul>
-    //         <li>Breed: ${this.breed}</li>
-    //         <li>Weight: ${this.weight}</li>
-    //         <li>Allergies: ${this.allergies}</li>
-    //         <li>Behaviors: ${this.behaviors}</li>
-    //         <li>Meds: ${this.meds}</li>
-    //         <li>Vet Info: ${this.vet_info}</li>
-    //         <li>Age: ${this.age}</li>
-    //     </ul>
-    //     `
-    //     return this.element
-    // }
 }
