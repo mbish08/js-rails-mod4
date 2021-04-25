@@ -15,4 +15,19 @@ class DogsAdapter {
         })
     }
 
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+        const name = document.getElementById('dog-name').value
+        const breed = document.getElementById('dog-breed').value
+        const weight = document.getElementById('dog-weight').value
+        const allergies = document.getElementById('dog-allergies').value
+        const behaviors = document.getElementById('dog-behaviors').value
+        const meds = document.getElementById('dog-meds').value
+        const vetInfo = document.getElementById('dog-vet-info').value
+        const age = document.getElementById('dog-age').value
+        const ownerId = document.getElementById('owner_id').value
+
+        console.log(e)
+    }
+
 }

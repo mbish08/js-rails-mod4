@@ -4,6 +4,7 @@ const newOwnerButton = document.getElementById('new-owner-button')
 const ownerForm = document.getElementById('owner-form')
 const ownerList = document.getElementById("owner-list")
 const newDogButton = document.getElementById('new-dog-button')
+const dogForm = document.getElementById('dog-form')
 
 document.addEventListener('DOMContentLoaded', () => {
     ownersAdapter.fetchOwners()
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ownerForm.addEventListener('submit', ownersAdapter.handleFormSubmit)
     ownerList.addEventListener('click', ownersAdapter.handleListClick)
     newDogButton.addEventListener('click', newDogsForm)
+    dogForm.addEventListener('submit', dogsAdapter.handleFormSubmit)
 })
 
 function newOwnersForm(e) {
