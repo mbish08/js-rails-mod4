@@ -17,19 +17,15 @@ class DogsAdapter {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
-        // debugger
-        // error on owner_id:  dogsAdapter.js:30 Uncaught TypeError: Cannot read property 'value' of null
         const name = document.getElementById('dog-name').value
         const breed = document.getElementById('dog-breed').value
-        const weight = document.getElementById('dog-weight').value
+        const weight = parseInt(document.getElementById('dog-weight').value)
         const allergies = document.getElementById('dog-allergies').value
         const behaviors = document.getElementById('dog-behaviors').value
         const meds = document.getElementById('dog-meds').value
         const vetInfo = document.getElementById('dog-vet-info').value
-        const age = document.getElementById('dog-age').value
+        const age = parseInt(document.getElementById('dog-age').value)
         const ownerId = document.getElementById('ownerSelect').selectedIndex
-        // debugger
-        // console.log(e)
 
         let newDogObj = {
             name, 
@@ -52,8 +48,6 @@ class DogsAdapter {
             body: JSON.stringify(newDogObj)
         }
 
-        // I need to double check what I am passing into Dog
-        // also need to check everything from here down to make sure it works properly after fixing owner_id issue
         fetch(this.dogsUrl, configObj)
         .then(res => res.json())
         .then(json => {
