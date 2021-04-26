@@ -25,7 +25,7 @@ class DogsAdapter {
         const meds = document.getElementById('dog-meds').value
         const vet_info = document.getElementById('dog-vet-info').value
         const age = parseInt(document.getElementById('dog-age').value)
-        const owner_id = document.getElementById('ownerSelect').selectedIndex
+        const owner_id = document.getElementById('ownerSelect').value
 
         let newDogObj = {
             name, 
