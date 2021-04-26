@@ -27,9 +27,9 @@ class DogsAdapter {
         const meds = document.getElementById('dog-meds').value
         const vetInfo = document.getElementById('dog-vet-info').value
         const age = document.getElementById('dog-age').value
-        const ownerId = document.getElementById('owner_id').value
+        const ownerId = document.getElementById('ownerSelect').selectedIndex
         // debugger
-        console.log(e)
+        // console.log(e)
 
         let newDogObj = {
             name, 
@@ -57,7 +57,7 @@ class DogsAdapter {
         fetch(this.dogsUrl, configObj)
         .then(res => res.json())
         .then(json => {
-            let dog = new Dog(json.data.attributes)
+            const dog = new Dog(json.data.attributes)
         })
 
         dogForm.reset()

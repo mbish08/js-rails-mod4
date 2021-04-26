@@ -25,9 +25,9 @@ class OwnersAdapter {
         // console.log(data)
         // debugger
         const dropDown = document.getElementById('ownerSelect')
-        let ownerId = parseInt(data.id)
+        const ownerId = parseInt(data.id)
         dropDown.innerHTML += `
-        <option  value="ownerId" name="owner_id">${data.attributes.name}</option>
+        <option value="${ownerId}" name="owner_id">${data.attributes.name}</option>
         `
     }
 
