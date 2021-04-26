@@ -24,6 +24,7 @@ class OwnersAdapter {
         const dropDown = document.getElementById('ownerSelect')
         const ownerId = parseInt(data.id)
         const ownerName = data.name
+        // debugger
         dropDown.innerHTML += `
         <option value="${ownerId}" name="owner_id">${ownerName}</option>
         `
@@ -49,7 +50,7 @@ class OwnersAdapter {
         fetch(this.ownersUrl, configObj)
         .then(res => res.json())
         .then(owner => {
-            let newOwner = new Owner(owner)
+            let newOwner = new Owner({ id: owner.id, ...owner})
             newOwner.attachToDom()
             newOwner.initializeOwnerDropDown()
         })
