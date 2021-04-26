@@ -19,4 +19,10 @@ class Dog {
         Dog.all.push(this)
     }
 
+    dogToDom() {
+        console.log(this)
+        // debugger
+        
+    }
+
 }
