@@ -9,10 +9,15 @@ class DogsAdapter {
         .then(res => res.json())
         .then(dogs => {
             dogs.data.forEach(el => {
-                let dog = new Dog({ id: el.id, ...el.attributes })
+                // let dog = new Dog({ id: el.id, ...el.attributes })
+                this.initializeDog(el)
             })
             
         })
+    }
+
+    initializeDog(data) {
+        let dogData = new Dog({ id: data.id, ...data.attributes })
     }
 
     handleFormSubmit = (e) => {
@@ -51,10 +56,10 @@ class DogsAdapter {
         fetch(this.dogsUrl, configObj)
         .then(res => res.json())
         .then(json => {
-            const dog = new Dog(json)
+            const dog = new Dog({id: json.id, ...json.attributes})
             // debugger
-            const dogToDom = document.getElementById(`owner-${owner_id}`)
-            dogToDom.append(dog)
+            // const dogToDom = document.getElementById(`owner-${owner_id}`)
+            // dogToDom.append(dog)
         })
 
         dogForm.reset()
@@ -65,7 +70,6 @@ class DogsAdapter {
         newDogButton.hidden = false
         newDogButton.addEventListener('click', newDogsForm)
         // debugger
-        
     }
 
     deleteDog(id) {
