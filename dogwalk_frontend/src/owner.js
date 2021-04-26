@@ -14,6 +14,8 @@ class Owner {
     
     attachToDom() {
         this.ownerList.append(this.ownerRender())
+        // debugger
+        // this.initializeOwnerDropDown()
     }
 
     ownerRender() {

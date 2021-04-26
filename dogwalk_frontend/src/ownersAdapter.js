@@ -52,9 +52,9 @@ class OwnersAdapter {
         .then(owner => {
             let newOwner = new Owner({ id: owner.id, ...owner})
             newOwner.attachToDom()
-            newOwner.initializeOwnerDropDown()
+            this.initializeOwnerDropDown({id: owner.id, name: name})
         })
-        
+        // debugger
         ownerForm.reset()
         const newOwnerButton = document.getElementById('new-owner-button')
         const formContainer = document.getElementById('new-owner-form-container')
