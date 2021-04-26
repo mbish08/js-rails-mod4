@@ -76,6 +76,9 @@ class OwnersAdapter {
         if (e.target.className === "delete") {
             ownersAdapter.deleteOwner(id)
         }
+        if (e.target.className === "delete-dog") {
+            dogsAdapter.deleteDog(id)
+        }
     }
 
     deleteOwner(id) {

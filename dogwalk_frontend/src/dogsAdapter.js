@@ -63,4 +63,25 @@ class DogsAdapter {
         newDogButton.addEventListener('click', newDogsForm)
     }
 
+    deleteDog(id) {
+        let configObj = {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }
+        }
+        
+        fetch(this.dogsUrl + `/${id}`, configObj)
+        .then(res => res.json())
+        .then(resp => {
+            alert(resp.message)
+        })
+
+        Dog.all = Dog.all.filter(dog => dog.id != id)
+
+        let dog = document.getElementById(`dog-${id}`)
+        dog.remove()
+    }
+
 }

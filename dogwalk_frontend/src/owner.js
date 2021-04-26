@@ -35,8 +35,9 @@ class Owner {
         dogsList.element.className = "dogs"
         this.dogs.forEach(dog => {
             dogsList.innerHTML += `
-            <div>
+            <div id="dog-${dog.id}">
                 <h4>${dog.name}</h4>
+                <button class="delete-dog" data-id="${dog.id}">Delete ${dog.name}</button>
                 <ul>
                     <li>Breed: ${dog.breed ? dog.breed : 'none'}</li>
                     <li>Weight: ${dog.weight ? dog.weight : 'none'}</li>
