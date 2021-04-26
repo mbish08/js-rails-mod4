@@ -19,7 +19,8 @@ class Owner {
     ownerRender() {
         this.element.innerHTML += `
         <div><h3>${this.name}</h3></div>
-        <button class="delete" data-id="${this.id}">Delete ${this.name}</button>
+        <!-- delete owner button disabled and set for future add -->
+        <!-- <button class="delete" data-id="${this.id}">Delete ${this.name}</button> -->
         `
 
         return this.element

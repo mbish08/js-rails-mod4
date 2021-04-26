@@ -81,25 +81,26 @@ class OwnersAdapter {
         }
     }
 
-    deleteOwner(id) {
-        let configObj = {
-            method: 'DELETE',
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            }
-        }
+    // commented out for further debugging outside of MVP
+    // deleteOwner(id) {
+    //     let configObj = {
+    //         method: 'DELETE',
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Accept: "application/json"
+    //         }
+    //     }
         
-        fetch(this.ownersUrl + `/${id}`, configObj)
-        .then(res => res.json())
-        .then(resp => {
-            alert(resp.message)
-        })
+    //     fetch(this.ownersUrl + `/${id}`, configObj)
+    //     .then(res => res.json())
+    //     .then(resp => {
+    //         alert(resp.message)
+    //     })
 
-        Owner.all = Owner.all.filter(owner => owner.id != id)
+    //     Owner.all = Owner.all.filter(owner => owner.id != id)
 
-        let owner = document.getElementById(`owner-${id}`)
-        owner.remove()
-    }
+    //     let owner = document.getElementById(`owner-${id}`)
+    //     owner.remove()
+    // }
 
 }
