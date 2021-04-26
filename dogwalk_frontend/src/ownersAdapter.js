@@ -9,7 +9,7 @@ class OwnersAdapter {
         .then(owners => {
             owners.data.forEach(owner => {
                 this.initializeOwner(owner)
-                this.initializeOwnerDropDown(owner)
+                // this.initializeOwnerDropDown(owner)
                 // console.log(owner)
             })
         })
@@ -19,6 +19,8 @@ class OwnersAdapter {
         let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
         ownerData.attachToDom()
         ownerData.addOwnersDogs()
+        // debugger
+        this.initializeOwnerDropDown(ownerData)
     }
 
     initializeOwnerDropDown(data) {
@@ -26,8 +28,9 @@ class OwnersAdapter {
         // debugger
         const dropDown = document.getElementById('ownerSelect')
         const ownerId = parseInt(data.id)
+        const ownerName = data.name
         dropDown.innerHTML += `
-        <option value="${ownerId}" name="owner_id">${data.attributes.name}</option>
+        <option value="${ownerId}" name="owner_id">${ownerName}</option>
         `
     }
 
@@ -53,6 +56,7 @@ class OwnersAdapter {
         .then(owner => {
             let newOwner = new Owner(owner)
             newOwner.attachToDom()
+            newOwner.initializeOwnerDropDown()
         })
         
         ownerForm.reset()
@@ -63,6 +67,8 @@ class OwnersAdapter {
        
         newOwnerButton.hidden = false
         newOwnerButton.addEventListener('click', newOwnersForm)
+        // debugger
+
     }
 
     handleListClick = (e) => {
