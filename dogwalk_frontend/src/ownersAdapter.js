@@ -9,8 +9,6 @@ class OwnersAdapter {
         .then(owners => {
             owners.data.forEach(owner => {
                 this.initializeOwner(owner)
-                // this.initializeOwnerDropDown(owner)
-                // console.log(owner)
             })
         })
     }
@@ -19,13 +17,10 @@ class OwnersAdapter {
         let ownerData = new Owner({id: data.id, name: data.attributes.name, ...data.relationships}) 
         ownerData.attachToDom()
         ownerData.addOwnersDogs()
-        // debugger
         this.initializeOwnerDropDown(ownerData)
     }
 
     initializeOwnerDropDown(data) {
-        // console.log(data)
-        // debugger
         const dropDown = document.getElementById('ownerSelect')
         const ownerId = parseInt(data.id)
         const ownerName = data.name
@@ -62,13 +57,9 @@ class OwnersAdapter {
         ownerForm.reset()
         const newOwnerButton = document.getElementById('new-owner-button')
         const formContainer = document.getElementById('new-owner-form-container')
-        
         formContainer.hidden = true
-       
         newOwnerButton.hidden = false
         newOwnerButton.addEventListener('click', newOwnersForm)
-        // debugger
-
     }
 
     handleListClick = (e) => {

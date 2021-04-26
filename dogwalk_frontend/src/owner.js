@@ -22,7 +22,7 @@ class Owner {
         <!-- delete owner button disabled and set for future add -->
         <!-- <button class="delete" data-id="${this.id}">Delete ${this.name}</button> -->
         `
-
+        
         return this.element
     }
 
