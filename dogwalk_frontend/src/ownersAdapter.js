@@ -72,7 +72,7 @@ class OwnersAdapter {
         }
     }
 
-    // commented out for further debugging outside of MVP
+    // commented out for further debugging/development outside of MVP
     // deleteOwner(id) {
     //     let configObj = {
     //         method: 'DELETE',
