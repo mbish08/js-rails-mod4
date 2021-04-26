@@ -52,6 +52,9 @@ class DogsAdapter {
         .then(res => res.json())
         .then(json => {
             const dog = new Dog(json)
+            // debugger
+            const dogToDom = document.getElementById(`owner-${owner_id}`)
+            dogToDom.append(dog)
         })
 
         dogForm.reset()
@@ -61,6 +64,8 @@ class DogsAdapter {
         dogFormContainer.hidden = true
         newDogButton.hidden = false
         newDogButton.addEventListener('click', newDogsForm)
+        // debugger
+        
     }
 
     deleteDog(id) {

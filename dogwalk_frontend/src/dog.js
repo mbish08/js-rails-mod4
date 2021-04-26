@@ -12,9 +12,9 @@ class Dog {
         this.vet_info = vet_info
         this.age = age
         this.owner_id = owner_id
-        this.dogList = document.getElementById("dog-list")
-        this.element = document.createElement('div')
-        this.element.className = "dogs"
+        // this.dogList = document.getElementById("dog-list")
+        // this.element = document.createElement('div')
+        // this.element.className = "dogs"
 
         Dog.all.push(this)
     }
