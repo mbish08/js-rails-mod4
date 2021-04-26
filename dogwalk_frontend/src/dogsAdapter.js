@@ -50,12 +50,9 @@ class DogsAdapter {
 
         fetch(this.dogsUrl, configObj)
         .then(res => res.json())
-        // .then(json => {
-        //     console.log(json)
-        //     const dog = new Dog(json.data.attributes)
-        // }
-        // )
-        // const newDogForm = document.getElementById('dog-form')
+        .then(json => {
+            const dog = new Dog(json)
+        })
 
         dogForm.reset()
         const newDogButton = document.getElementById('new-dog-button')
