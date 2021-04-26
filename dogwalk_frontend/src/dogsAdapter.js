@@ -23,9 +23,9 @@ class DogsAdapter {
         const allergies = document.getElementById('dog-allergies').value
         const behaviors = document.getElementById('dog-behaviors').value
         const meds = document.getElementById('dog-meds').value
-        const vetInfo = document.getElementById('dog-vet-info').value
+        const vet_info = document.getElementById('dog-vet-info').value
         const age = parseInt(document.getElementById('dog-age').value)
-        const ownerId = document.getElementById('ownerSelect').selectedIndex
+        const owner_id = document.getElementById('ownerSelect').selectedIndex
 
         let newDogObj = {
             name, 
@@ -34,9 +34,9 @@ class DogsAdapter {
             allergies,
             behaviors,
             meds,
-            vetInfo,
+            vet_info,
             age,
-            ownerId
+            owner_id
         }
 
         let configObj = {
@@ -50,15 +50,19 @@ class DogsAdapter {
 
         fetch(this.dogsUrl, configObj)
         .then(res => res.json())
-        .then(json => {
-            const dog = new Dog(json.data.attributes)
-        })
+        // .then(json => {
+        //     console.log(json)
+        //     const dog = new Dog(json.data.attributes)
+        // }
+        // )
+        // const newDogForm = document.getElementById('dog-form')
 
         dogForm.reset()
-        const newDogForm = document.getElementById('new-dog-form-container')
         const newDogButton = document.getElementById('new-dog-button')
-        newDogForm.hidden = true
-        newDogForm.hidden = false
+        const dogFormContainer = document.getElementById('new-dog-form-container')
+        
+        dogFormContainer.hidden = true
+        newDogButton.hidden = false
         newDogButton.addEventListener('click', newDogsForm)
     }
 
