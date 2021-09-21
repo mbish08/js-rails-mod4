@@ -24,7 +24,7 @@ class OwnersAdapter {
         const dropDown = document.getElementById('ownerSelect')
         const ownerId = parseInt(data.id)
         const ownerName = data.name
-        // debugger
+     
         dropDown.innerHTML += `
         <option value="${ownerId}" name="owner_id">${ownerName}</option>
         `
@@ -54,7 +54,7 @@ class OwnersAdapter {
             newOwner.attachToDom()
             this.initializeOwnerDropDown({id: owner.id, name: name})
         })
-        // debugger
+        
         ownerForm.reset()
         const newOwnerButton = document.getElementById('new-owner-button')
         const formContainer = document.getElementById('new-owner-form-container')
@@ -72,27 +72,4 @@ class OwnersAdapter {
             dogsAdapter.deleteDog(id)
         }
     }
-
-    // commented out for further debugging/development outside of MVP
-    // deleteOwner(id) {
-    //     let configObj = {
-    //         method: 'DELETE',
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "application/json"
-    //         }
-    //     }
-        
-    //     fetch(this.ownersUrl + `/${id}`, configObj)
-    //     .then(res => res.json())
-    //     .then(resp => {
-    //         alert(resp.message)
-    //     })
-
-    //     Owner.all = Owner.all.filter(owner => owner.id != id)
-
-    //     let owner = document.getElementById(`owner-${id}`)
-    //     owner.remove()
-    // }
-
 }
